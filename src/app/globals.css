@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background:   0 0% 4%;
+    --foreground:   0 0% 98%;
+    --card:         0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover:      0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary:      43 96% 56%;
+    --primary-foreground: 0 0% 4%;
+    --secondary:    0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted:        0 0% 14%;
+    --muted-foreground: 0 0% 60%;
+    --accent:       43 96% 56%;
+    --accent-foreground: 0 0% 4%;
+    --destructive:  0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border:       0 0% 16%;
+    --input:        0 0% 16%;
+    --ring:         43 96% 56%;
+    --radius:       0.75rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1,h2,h3,h4,h5 { @apply font-bold tracking-tight; }
+}
+
+@layer components {
+  .gold-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+  }
+  .gold-text {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10;
+  }
+  .status-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}
